@@ -42,5 +42,13 @@ input[type="email"] {
   .key {
     align-self: center;
     color: red;
+    transition: all .5s ease;
+    transform: scaleX(-1) rotate(45deg);
+  }
+
+  .matchingKey {
+    @extend .key;
+    color: green;
+    transform: scaleX(-1) rotate(135deg);
   }
 }
