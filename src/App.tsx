@@ -5,8 +5,8 @@ import { PasswordCreator } from "./PasswordCreator";
 
 export function App() {
   const [validForm, setValidForm] = useState(false);
-  const [email, setEmail] = useState<string | undefined>(undefined);
-  const [password, setPassword] = useState<string | undefined>(undefined);
+  const [email, setEmail] = useState<string | undefined>();
+  const [password, setPassword] = useState<string | undefined>();
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => setValidForm(!!password && !!email), [email, password]);
