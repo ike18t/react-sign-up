@@ -10,11 +10,17 @@
   input {
     border: 0px;
     font-size: 20px;
-    height: 40px;;
+    height: 40px;
   }
 
   input[type="submit"] {
     border: solid 1px #eee;
+
+    &:not([disabled]) {
+      background-color: #44bf44;
+      color: #fff;
+      font-weight: bold;
+    }
   }
 
   input[type="email"] {
@@ -28,27 +34,4 @@
   border: solid 1px #eee;
   margin: auto;
   width: 400px;
-}
-
-.passwordContainer {
-  border: solid 1px #eee;
-  display: flex;
-
-  input {
-    flex: 2;
-    padding-left: 10px;
-  }
-
-  .key {
-    align-self: center;
-    color: red;
-    transition: all .5s ease;
-    transform: scaleX(-1) rotate(45deg);
-  }
-
-  .matchingKey {
-    @extend .key;
-    color: green;
-    transform: scaleX(-1) rotate(135deg);
-  }
 }
