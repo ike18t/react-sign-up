@@ -16,18 +16,18 @@
   input[type="submit"] {
     border: solid 1px #eee;
   }
+
+  input[type="email"] {
+    border: solid 1px #eee;
+    padding-left: 10px;
+    box-sizing: border-box;
+  }
 }
 
 .container {
   border: solid 1px #eee;
   margin: auto;
   width: 400px;
-}
-
-input[type="email"] {
-  border: solid 1px #eee;
-  padding-left: 10px;
-  box-sizing: border-box;
 }
 
 .passwordContainer {
