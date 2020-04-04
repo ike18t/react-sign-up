@@ -1,24 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import styles from "./App.module.scss";
+import { ReactComponent as Key } from "tabler-icons/icons/key.svg";
 
-function App() {
+export function App() {
+  const [validForm] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.container}>
+      <form className={styles.content}>
+        <input type="email" placeholder="Email Address" autoComplete="username" />
+        <span className={styles.passwordContainer}>
+          <input className="password" type="password" placeholder="Password" autoComplete="new-password" />
+          <Key className={styles.key} />
+        </span>
+        <span className={styles.passwordContainer}>
+          <input
+            className="confirm"
+            type="password"
+            placeholder="Confirm Password"
+            autoComplete="new-password"
+          />
+          <Key className={styles.key} />
+        </span>
+        <input disabled={!validForm} type="submit" value="Sign Up!" />
+      </form>
     </div>
   );
 }

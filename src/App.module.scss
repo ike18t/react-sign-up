@@ -1,0 +1,46 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  margin: 25px;
+
+  & > * {
+    margin: 5px;
+  }
+
+  input {
+    border: 0px;
+    font-size: 20px;
+    height: 40px;;
+  }
+
+  input[type="submit"] {
+    border: solid 1px #eee;
+  }
+}
+
+.container {
+  border: solid 1px #eee;
+  margin: auto;
+  width: 400px;
+}
+
+input[type="email"] {
+  border: solid 1px #eee;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+
+.passwordContainer {
+  border: solid 1px #eee;
+  display: flex;
+
+  input {
+    flex: 2;
+    padding-left: 10px;
+  }
+
+  .key {
+    align-self: center;
+    color: red;
+  }
+}
