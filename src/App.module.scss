@@ -15,6 +15,7 @@
 
   input[type="submit"] {
     border: solid 1px #eee;
+    background-color: #efefef;
 
     &:not([disabled]) {
       background-color: #44bf44;
@@ -33,5 +34,23 @@
 .container {
   border: solid 1px #eee;
   margin: auto;
+  width: 400px;
+}
+
+.modal {
+  align-items: center;
+  background-color: #fff;
+  border: solid 1px #eee;
+  bottom: auto;
+  display: flex;
+  font-weight: bold;
+  height: 100px;
+  justify-content: center;
+  left: 50%;
+  margin-right: -50%;
+  position: absolute;
+  right: auto;
+  top: 10%;
+  transform: translate(-50%, -50%);
   width: 400px;
 }

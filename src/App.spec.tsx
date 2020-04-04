@@ -1,4 +1,5 @@
 import React from "react";
+import Modal from "react-modal";
 import { shallow } from "enzyme";
 import App from "./App";
 import { PasswordCreator } from "./PasswordCreator";
@@ -49,6 +50,24 @@ describe("App Component", () => {
       const submit = wrapper.find('input[type="submit"]');
 
       expect(submit.prop("disabled")).toBe(false);
+    });
+  });
+
+  describe("submission", () => {
+    it("shows success modal", () => {
+      const wrapper = shallow(<App />);
+
+      wrapper.find(PasswordCreator).prop("onChange")("whatevs");
+
+      wrapper
+        .find('input[type="email"]')
+        .simulate("change", { target: { value: "ike18t@gmail.com" } });
+
+      wrapper
+        .find("form")
+        .simulate("submit", { preventDefault: () => undefined });
+
+      expect(wrapper.find(Modal).prop("isOpen")).toBe(true);
     });
   });
 });

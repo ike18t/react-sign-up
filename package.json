@@ -9,6 +9,7 @@
     "@types/react-dom": "^16.9.6",
     "react": "16.8",
     "react-dom": "16.8",
+    "react-modal": "^3.11.2",
     "react-scripts": "3.4.1",
     "typescript": "^3.7.5"
   },
@@ -36,6 +37,7 @@
   "devDependencies": {
     "@types/enzyme": "^3.10.5",
     "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/react-modal": "^3.10.5",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "jest-react-hooks-shallow": "^1.2.0",
