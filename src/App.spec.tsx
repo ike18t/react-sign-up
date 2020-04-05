@@ -17,7 +17,7 @@ describe("App Component", () => {
     it("is disabled when password is set but email is not", () => {
       const wrapper = shallow(<App />);
 
-      wrapper.find(PasswordCreator).prop("onChange")("whatevs");
+      wrapper.find(PasswordCreator).simulate("change", "whatevs");
 
       const submit = wrapper.find('input[type="submit"]');
 
@@ -31,7 +31,7 @@ describe("App Component", () => {
         .find('input[type="email"]')
         .simulate("change", { target: { value: "ike18t@gmail.com" } });
 
-      wrapper.find(PasswordCreator).prop("onChange")(undefined);
+      wrapper.find(PasswordCreator).simulate("change", undefined);
 
       const submit = wrapper.find('input[type="submit"]');
 
@@ -41,7 +41,7 @@ describe("App Component", () => {
     it("is enabled when the password and email are set", () => {
       const wrapper = shallow(<App />);
 
-      wrapper.find(PasswordCreator).prop("onChange")("whatevs");
+      wrapper.find(PasswordCreator).simulate("change", "whatevs");
 
       wrapper
         .find('input[type="email"]')
@@ -57,7 +57,7 @@ describe("App Component", () => {
     it("shows success modal", () => {
       const wrapper = shallow(<App />);
 
-      wrapper.find(PasswordCreator).prop("onChange")("whatevs");
+      wrapper.find(PasswordCreator).simulate("change", "whatevs");
 
       wrapper
         .find('input[type="email"]')
