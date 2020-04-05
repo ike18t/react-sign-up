@@ -1,35 +1,32 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import styles from "./PasswordCreator.module.scss";
 import { ReactComponent as Key } from "tabler-icons/icons/key.svg";
 
-export const PasswordCreator = (props: {
+export const PasswordCreator = ({
+  onChange,
+}: {
   onChange: (password?: string) => void;
 }) => {
   const [passwordsValid, setPasswordsValid] = useState(false);
-  const [password, setPassword] = useState<undefined | string>(undefined);
-  const [confirmPassword, setConfirmPassword] = useState<undefined | string>(
-    undefined
-  );
-  const [strength, setStrength] = useState<number>(0);
+  const [password, setPassword] = useState<undefined | string>();
+  const [confirmPassword, setConfirmPassword] = useState<undefined | string>();
 
   useEffect(
     () => setPasswordsValid(!!password && confirmPassword === password),
     [confirmPassword, password]
   );
 
-  useEffect(() => props.onChange(passwordsValid ? password : undefined), [
-    props,
+  useEffect(() => onChange(passwordsValid ? password : undefined), [
+    onChange,
     password,
     passwordsValid,
   ]);
 
-  useEffect(
+  const strength = useMemo(
     () =>
-      setStrength(
-        strengthChecks.reduce(
-          (acc, check) => (password?.match(check) ? acc + 1 : acc),
-          0
-        )
+      strengthChecks.reduce(
+        (acc, check) => (password?.match(check) ? acc + 1 : acc),
+        0
       ),
     [password]
   );
